@@ -1,0 +1,31 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3026
+
+The PickAColor plugin is an attempt to make inserting or modifing colors easier. With it you can use the GTk or Mac OS X color chooser or a color name to insert or modify an existing color code. It borrows heavily from vimscript #3014 and vimscript #2756.
+
+It provides four commands that will insert the corresponding code:
+- :PickHEX
+- :PickHSL
+- :PickRGB
+- :PickRAW
+
+You can give a color name as an argument with the command and it will be translated to its corresponding code. You can set which set of color names to use, either web or X11, with the option g:pickacolor_use_web_colors.
+
+Using any of the commands without arguments will open the Mac OS X (if working on a mac) or GTK (if available) color chooser dialog.
+
+When the cursor is on a hexadecimal color code or a color name, it will be replaced with the new color. If you open the color chooser, it will load the current color. This feature can be disabled with g:pickacolor_edit_names and g:pickacolor_edit_hex.
+
+If there is no hexadecimal color code or a color name under the cursor, the clipboard will be read and parsed for one and it will be used for the color chooser dialog.
+
+When you edit or insert a color, the code will be also loaded into the clipboard (under X11 the selection clipboard will be used).
+
+Both features can be disabled with g:pickacolor_set_clipboard and g:pickacolor_get_clipboard.
+
+The color name supported are those listed in the following sources:
+
+Web color names:
+  http://www.w3.org/TR/css3-color/#svg-color
+
+X11 color names:
+  http://cvsweb.xfree86.org/cvsweb/xc/programs/rgb/rgb.txt?rev=1.2
+
+Read :help PickAColor for more details.
